@@ -47,6 +47,24 @@ p {
   color: #141414;
 }
 
+#outroCanvas {
+  position: absolute;
+  width: 100vw;
+  height: 100svh;
+  z-index: -1;
+}
+
+.outro {
+  margin-top: 3px;
+  background-color: #060606b2;
+  height: 100svh;
+}
+
+.outro h1 {
+  color: #fff;
+  font-size: 6.5rem;
+}
+
 .hero {
   flex-direction: column;
 }
@@ -175,9 +193,12 @@ p {
   width: 100vw;
   height: 100svh;
   background-color: #e3e3db;
+  /* background-color: transparent; */
   color: #141414;
   overflow: hidden;
 }
+
+
 
 .banner-img-container {
   position: relative;
