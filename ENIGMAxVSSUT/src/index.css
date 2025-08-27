@@ -111,6 +111,19 @@ p {
   background-color: var(--accent-4);
 }
 
+#card-5 .card-inner {
+  background-color: rgb(222, 85, 85);
+}
+
+#card-6 .card-inner {
+  background-color: rgb(149, 222, 85);
+}
+
+#card-7 .card-inner {
+  background-color: rgb(119, 132, 252);
+}
+
+
 .card-info {
   width: 25%;
   padding: 3rem;
