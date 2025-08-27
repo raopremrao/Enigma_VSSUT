@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         end: `+=${window.innerHeight * 3}px`,
         pin: true,
         pinSpacing: true,
-        // scrub: 2,
-        scrub: true,
+        scrub: 2,
+        // scrub: true,
         onUpdate: (self) => {
             const progress = self.progress;
 
