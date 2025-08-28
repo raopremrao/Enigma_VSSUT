@@ -3,12 +3,13 @@ import {
   luminance, cos, min, time, atan, uniform, pass,
   PI, PI2, color, positionLocal, sin, texture, Fn,
   uv, vec2, vec3, vec4,
-  alphaT
+  alphaT,
+  log
 } from 'three/tsl';
 
 import { bloom } from 'three/examples/jsm/tsl/display/BloomNode.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
+// import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
 
 
 // console.log(THREE);
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
 
     function init() {
-        camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 1, 15);
+        camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 11);
         // camera.position.set(1, 3, 5);
         camera.position.set(-0.76, 10, -0.52);
 
@@ -153,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // tornado cylinder geometry
 
-        const cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 1, 20, 20, true );
+        // const cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 1, 20, 20, true );
+        const cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 1, 14, 14, true );
 		cylinderGeometry.translate( 0, 0.5, 0 );
 
         // tornado emissive cylinder
@@ -258,12 +260,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const canvas = document.getElementById('outroCanvas');
 
-		renderer = new THREE.WebGPURenderer( { antialias: true, 
-            alphaT: true,
+		renderer = new THREE.WebGPURenderer( { antialias: false, 
+            // alphaT: true,
             canvas: canvas
          } );
 		renderer.setClearColor( 0x201919 );
-		renderer.setPixelRatio( window.devicePixelRatio );
+		renderer.setPixelRatio( Math.min(window.devicePixelRatio, 1.5) );
 		renderer.setSize( window.innerWidth, window.innerHeight );
 		renderer.setAnimationLoop( animate );
 		renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -277,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const scenePassColor = scenePass.getTextureNode( 'output' );
 
 		// const bloomPass = bloom( scenePassColor, 1, 0.1, 1 );
-		const bloomPass = bloom( scenePassColor, 0.31, 0, 1 );
+		const bloomPass = bloom( scenePassColor, 0.11, 0, 1 );
 
 		postProcessing.outputNode = scenePassColor.add( bloomPass );
 

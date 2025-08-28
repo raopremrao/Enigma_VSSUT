@@ -152,7 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // tornado cylinder geometry
 
-        const cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 1, 20, 20, true );
+        // const cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 1, 20, 20, true );
+        const cylinderGeometry = new THREE.CylinderGeometry( 1, 1, 1, 14, 14, true );
 		cylinderGeometry.translate( 0, 0.5, 0 );
 
         // tornado emissive cylinder
@@ -257,12 +258,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const canvas = document.getElementById('introCanvas');
 
-		renderer = new THREE.WebGPURenderer( { antialias: true, 
-            alphaT: true,
+		renderer = new THREE.WebGPURenderer( { antialias: false, 
+            // alphaT: true,
             canvas: canvas
          } );
 		renderer.setClearColor( 0x201919 );
-		renderer.setPixelRatio( window.devicePixelRatio );
+		// renderer.setPixelRatio( window.devicePixelRatio );
+		renderer.setPixelRatio( Math.min(window.devicePixelRatio, 1.5) );
+		
 		renderer.setSize( window.innerWidth, window.innerHeight );
 		renderer.setAnimationLoop( animate );
 		renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -276,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const scenePassColor = scenePass.getTextureNode( 'output' );
 
 		// const bloomPass = bloom( scenePassColor, 1, 0.1, 1 );
-		const bloomPass = bloom( scenePassColor, 0.31, 0, 1 );
+		const bloomPass = bloom( scenePassColor, 0.11, 0, 1 );
 
 		postProcessing.outputNode = scenePassColor.add( bloomPass );
 
