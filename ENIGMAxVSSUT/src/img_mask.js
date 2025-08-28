@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const bannerContainer = document.querySelector(".banner-img-container");
     const bannerIntroTextElement = gsap.utils.toArray(".banner-intro-text");
+    // const img1 = document.getElementById('img1')
     const bannerMaskLayers = gsap.utils.toArray(".mask")
     
     const bannerHeader = document.querySelector(".banner-header h1");
@@ -68,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     x: textProgress * moveDistance,
                     ease: "back.out(3)"
                 });
+
+                
+
             }
 
             if (progress >= 0.7 && progress <= 0.9){
