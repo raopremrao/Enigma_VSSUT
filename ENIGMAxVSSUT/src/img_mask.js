@@ -1,17 +1,17 @@
 import gsap from 'gsap'
 import { ScrollTrigger, SplitText } from 'gsap/all'
-import Lenis from 'lenis'
+// import Lenis from 'lenis'
 
 
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    const lenis = new Lenis();
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000); 
-    });
-    gsap.ticker.lagSmoothing(0);
+    // const lenis = new Lenis();
+    // lenis.on('scroll', ScrollTrigger.update);
+    // gsap.ticker.add((time) => {
+    //   lenis.raf(time * 1000); 
+    // });
+    // gsap.ticker.lagSmoothing(0);
 
     const bannerContainer = document.querySelector(".banner-img-container");
     const bannerIntroTextElement = gsap.utils.toArray(".banner-intro-text");
