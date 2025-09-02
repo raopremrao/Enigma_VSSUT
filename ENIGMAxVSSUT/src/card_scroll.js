@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 z: -400,
                 // rotationX: 45,
                 rotationX: 50,
+                // opacity: 0,
+                display: 'none',
                 scrollTrigger: {
                     trigger: cards[index + 1],
                     start: "top 100%",
