@@ -267,7 +267,7 @@ p {
   height: 100%;
   object-fit: cover;
   border-radius: 2rem;
-  /* border: #2224217b solid 2px; */
+  border: #2224217b solid 2px; 
 }
 
 
@@ -422,3 +422,44 @@ p {
   border-radius: 1rem;
 }
 
+
+.cursor {
+  height: 5.6rem;
+  width:  5.6rem;    
+  /* background-color: white; */
+  background-color: #03081aba;
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  position: fixed;
+  font-size: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 9;
+  opacity: 0;
+  font-size: 1.2rem;
+  color: #fff;
+  box-shadow: #ffffff 0.15rem 0.15rem 0.15rem;
+}
+
+/* 
+.staypage {
+  position: relative;
+  width: 100vw;
+}
+
+.stayContainer {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.stay1 {
+  position: absolute;
+  top: 0;
+  font-size: 4rem;
+  color: #fff;
+  font-family: monospace;
+} */
