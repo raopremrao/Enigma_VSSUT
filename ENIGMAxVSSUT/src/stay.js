@@ -10,57 +10,57 @@ const bgimages = gsap.utils.toArray('.stay-bg-images img');
 
 // Set initial z-indexes and clip-paths
 images.forEach((image, i) => {
-  gsap.set(image, { 
-    zIndex: images.length - i,
-    clipPath: 'inset(0 0 0% 0)' // Initially fully visible
-  });
+    gsap.set(image, {
+        zIndex: images.length - i,
+        clipPath: 'inset(0 0 0% 0)' // Initially fully visible
+    });
 });
 
 bgimages.forEach((image, i) => {
-  gsap.set(image, { 
-    zIndex: bgimages.length - i,
-    clipPath: 'inset(0% 0 0 0)' // Initially fully visible
-  });
+    gsap.set(image, {
+        zIndex: bgimages.length - i,
+        clipPath: 'inset(0% 0 0 0)' // Initially fully visible
+    });
 });
 
 textSections.forEach((section, i) => {
-  if (i < textSections.length - 1) {
-    const imageToReveal = images[i];
-    const bgImageToReveal = bgimages[i];
+    if (i < textSections.length - 1) {
+        const imageToReveal = images[i];
+        const bgImageToReveal = bgimages[i];
 
-    const rightConfig = {
-      clipPath: 'inset(0 0 100% 0)',
-      ease: 'none',
-      // scale: 1.3,
-      scrollTrigger: {
-        trigger: section,
-        start: '50% top',
-        end: '95% top',
-        scrub: true,
-        markers: false,
-      }
-    };
+        const rightConfig = {
+            clipPath: 'inset(0 0 100% 0)',
+            ease: 'none',
+            // scale: 1.3,
+            scrollTrigger: {
+                trigger: section,
+                start: '50% top',
+                end: '95% top',
+                scrub: true,
+                markers: false,
+            }
+        };
 
-    const bgConfig = {
-      clipPath: 'inset(100% 0 0% 0)',
-      ease: 'none',
-      // y: 10,
-      scale: 1.3,
-      scrollTrigger: {
-        trigger: section,
-        start: '40% top',
-        end: '95% top',
-        scrub: true,
-        markers: false,
-      }
-    };
+        const bgConfig = {
+            clipPath: 'inset(100% 0 0% 0)',
+            ease: 'none',
+            // y: 10,
+            scale: 1.3,
+            scrollTrigger: {
+                trigger: section,
+                start: '40% top',
+                end: '95% top',
+                scrub: true,
+                markers: false,
+            }
+        };
 
-    gsap.fromTo(imageToReveal, {clipPath: 'inset(0 0 0% 0)'}, rightConfig)
+        gsap.fromTo(imageToReveal, { clipPath: 'inset(0 0 0% 0)' }, rightConfig)
 
-    if(bgImageToReveal) {
-      gsap.fromTo(bgImageToReveal, {clipPath: 'inset(0% 0 0 0)'}, bgConfig)
+        if (bgImageToReveal) {
+            gsap.fromTo(bgImageToReveal, { clipPath: 'inset(0% 0 0 0)' }, bgConfig)
+        }
     }
-  }
 });
 
 
@@ -93,10 +93,10 @@ textSections.forEach((section, i) => {
 
 // Pin the right column
 ScrollTrigger.create({
-  trigger: '.stay-container',
-  start: 'top top',
-  end: 'bottom bottom',
-  pin: '.stay-right',
+    trigger: '.stay-container',
+    start: 'top top',
+    end: 'bottom bottom',
+    pin: '.stay-right',
 });
 
 
@@ -127,8 +127,35 @@ ScrollTrigger.create({
 
 
 ScrollTrigger.create({
-  trigger: '.stay-container',
-  start: 'top top',
-  end: 'bottom bottom',
-  pin: '.stay-bg'
+    trigger: '.stay-container',
+    start: 'top top',
+    end: 'bottom bottom',
+    pin: '.stay-bg'
 });
+
+const cursor = document.querySelector('.cursor');
+const stay = document.querySelector('.stay')
+
+stay.addEventListener('mousemove', (dets) => {
+    gsap.to(cursor, {
+        opacity: 1,
+        display: "flex",
+        x: dets.x + 10,
+        y: dets.y + 10,
+        duration: 1,
+        // ease: "back.out(4)"
+        ease: 'Power4.out'
+    })
+})
+
+stay.addEventListener('mouseleave', (dets) => {
+    gsap.to(cursor, {
+        opacity: 0,
+        display: "none",
+        // x: dets.x + 10,
+        // y: dets.y + 10,
+        duration: 1,
+        // ease: "back.out(4)"
+        ease: 'Power4.out'
+    })
+})

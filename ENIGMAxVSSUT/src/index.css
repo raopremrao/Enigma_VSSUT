@@ -122,7 +122,7 @@ p {
     display: flex;
     flex-direction: column;
     transform-origin: 50% 100%;
-    will-change: transform;
+    /* will-change: transform; */
     text-align: center;
 }
 
@@ -195,7 +195,7 @@ p {
     height: 100%;
     background-color: #000;
     opacity: var(--after-opacity, 0);
-    will-change: opacity;
+    /* will-change: opacity; */
     pointer-events: none;
     z-index: 2;
 }
@@ -219,7 +219,7 @@ p {
 }
 
 .do h1 {
-    color: #000000;
+    color: #ffffff;
     font-size: 16rem;
     position: absolute;
     top: 45%;
@@ -355,7 +355,7 @@ p {
     position: relative;
     width: 100%;
     height: 100%;
-    will-change: transform;
+    /* will-change: transform; */
 }
 
 .banner-img-container .img {
@@ -364,7 +364,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    will-change: transform;
+    /* will-change: transform; */
 }
 
 .banner-img-container .img.mask {
@@ -400,7 +400,7 @@ p {
 .banner-intro-text {
     flex: 1;
     position: relative;
-    will-change: transform;
+    /* will-change: transform; */
 }
 
 .banner-intro-text:nth-child(1) {
@@ -529,3 +529,7 @@ p {
   color: #fff;
   font-family: monospace;
 } */
+
+.outro {
+    align-items: center;
+}
