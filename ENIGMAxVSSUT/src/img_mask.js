@@ -17,17 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const bannerIntroTextElement = gsap.utils.toArray(".banner-intro-text");
     // const img1 = document.getElementById('img1')
     const bannerMaskLayers = gsap.utils.toArray(".mask")
-    
+
     const bannerHeader = document.querySelector(".banner-header h1");
 
-    const splitText = new SplitText(bannerHeader, { type: "words"});
+    const splitText = new SplitText(bannerHeader, { type: "words" });
     const words = splitText.words;
     gsap.set(words, {
         opacity: 0
     })
 
     bannerMaskLayers.forEach((layer, i) => {
-        
+
         gsap.set(layer, {
             scale: 0.9 - i * 0.15
         });
@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
         onUpdate: (self) => {
             const progress = self.progress;
 
-            gsap.set(bannerContainer, {scale: progress});
+            gsap.set(bannerContainer, { scale: progress });
 
             bannerMaskLayers.forEach((layer, i) => {
                 const initialScale = 0.9 - i * 0.15;
                 const layerProgress = Math.min(progress / 0.9, 1.0);
                 const currentScale = initialScale + layerProgress * (1.0 - initialScale);
 
-                gsap.set(layer, {scale: currentScale});
+                gsap.set(layer, { scale: currentScale });
             })
 
             if (progress <= 0.9) {
@@ -70,11 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: "back.out(3)"
                 });
 
-                
+
 
             }
 
-            if (progress >= 0.7 && progress <= 0.9){
+            if (progress >= 0.7 && progress <= 0.9) {
                 const headerProgress = (progress - 0.7) / 0.2;
                 const totalWords = words.length;
 
@@ -84,22 +84,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     let wordOpacity = 0;
 
-                    if (headerProgress >= wordEndDelay){
+                    if (headerProgress >= wordEndDelay) {
                         wordOpacity = 1;
-                    } else if (headerProgress >= wordStartDelay){
+                    } else if (headerProgress >= wordStartDelay) {
                         const wordProgress = (headerProgress - wordStartDelay) / (wordEndDelay - wordStartDelay);
 
                         wordOpacity = wordProgress
                     }
 
-                    gsap.set(word, {opacity: wordOpacity});
+                    gsap.set(word, { opacity: wordOpacity });
                 });
             } else if (progress < 0.7) {
-                gsap.set(words, {opacity: 0});
+                gsap.set(words, { opacity: 0 });
             } else if (progress > 0.9) {
-                gsap.set(words, {opacity: 1});
+                gsap.set(words, { opacity: 1 });
             }
         },
     });
-    
+
 })
