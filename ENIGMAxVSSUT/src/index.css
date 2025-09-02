@@ -39,10 +39,10 @@ p {
   position: relative;
   width: 100vw;
   height: 100svh;
-  padding: 2rem;
+  /* padding: 2rem; */
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   text-align: center;
   background-color: #f9f4eb;
   color: #141414;
@@ -71,12 +71,23 @@ p {
 
 .hero {
   flex-direction: column;
+  object-fit: cover;
+  /* height: 120svh; */
+  overflow-x: none;
+
+}
+.hero img {
+  position: absolute;
+  z-index: -1;
 }
 
 .hero h1 {
+  z-index: 2;
   margin-bottom: 1.5rem;
   color: #ffffff;
   user-select: none;
+  font-size: 9rem;
+  /* top: 70%; */
 }
 
 .hero p{
