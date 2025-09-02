@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  /* Remove overflow: hidden to allow Lenis to manage scrolling */
+}
+
+.outro, .about {
+  width: 100vw;
+  height: 100vh;
+}
+
+.outro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outro h1 {
+  font-family: monospace;
+  font-size: 4rem;
+}
+
+.about {
+  background-color: #171414;
+  color: #fff;
+}
+
+.about h1 {
+  height: 300px;
+  width: 400px;
+  font-family: Courier, monospace;
+  font-size: 8rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 2rem 0 2rem 2rem;
+}
+
+.about .content p {
+  width: 30rem;
+  font-size: 1.3rem;
+  padding: 0;
+  margin: 0 0 3rem 2rem;
+}
+
+.about .footer {
+  border-top: 1px solid #fff;
+  padding-top: 0;
+  margin-left: 2rem;
+  margin-right: 5rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.footer div {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  margin-right: 7rem;
+}
+
+.footer div p {
+  padding: 0.3rem;
+}
+
+.footer div a {
+  padding: 0.3rem;
+  text-decoration: none;
+  color: #fff;
+}
