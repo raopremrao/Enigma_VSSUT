@@ -7,6 +7,11 @@
     --accent-4: #81b7bf;
 }
 
+@font-face {
+    font-family: 'Dirtyline';
+    src: url('/Dirtyline.woff2') format('woff2');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,13 +25,15 @@ img {
     object-fit: cover;
 }
 
+
+/* 
 h1 {
     text-transform: uppercase;
     font-family: "Barlow Condensed", sans-serif;
     font-size: 5rem;
     font-weight: 900;
     line-height: 1;
-}
+} */
 
 p {
     font-family: "Host Grotesk", sans-serif;
@@ -65,6 +72,11 @@ p {
 .outro h1 {
     color: #fff;
     font-size: 6.5rem;
+    text-transform: uppercase;
+    font-family: "Barlow Condensed", sans-serif;
+    /* font-size: 5rem; */
+    font-weight: 900;
+    line-height: 1;
 }
 
 .hero {
@@ -84,8 +96,13 @@ p {
     margin-bottom: 1.5rem;
     color: #ffffff;
     user-select: none;
-    font-size: 9rem;
+    font-size: 10rem;
     /* top: 70%; */
+    text-transform: uppercase;
+    font-family: "Barlow Condensed", sans-serif;
+    /* font-size: 5rem; */
+    font-weight: 900;
+    line-height: 1;
 }
 
 .hero p {
@@ -105,6 +122,14 @@ p {
     position: relative;
     width: 100vw;
     background-color: #0f0f0f;
+}
+
+.sticky-cards h1 {
+    text-transform: uppercase;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
 }
 
 .card {
@@ -221,8 +246,15 @@ p {
 .do h1 {
     color: #ffffff;
     font-size: 16rem;
+    /* font-size: 10rem; */
     position: absolute;
     top: 45%;
+    /* text-transform: uppercase; */
+    font-family: "Barlow Condensed", sans-serif;
+    /* font-family: 'Dirtyline', sans-serif; */
+    /* font-size: 5rem; */
+    font-weight: 900;
+    line-height: 1;
 }
 
 
@@ -274,13 +306,14 @@ p {
 }
 
 .stay h2 {
-    font-size: 8rem;
+    font-size: 7rem;
     /* text-align: right; */
-    color: #ffffff;
+    color: #f1f4be;
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: 'Dirtyline', sans-serif;
+    /* font-family: "Barlow Condensed", sans-serif; */
     font-weight: 800;
 }
 
@@ -385,6 +418,8 @@ p {
     width: 75%;
     color: #e3e3db;
     z-index: 2;
+    font-family: 'Dirtyline', sans-serif;
+    font-size: 2.5rem;
 }
 
 .banner-intro-text-container {
@@ -401,6 +436,9 @@ p {
     flex: 1;
     position: relative;
     /* will-change: transform; */
+    font-family: 'Dirtyline', sans-serif;
+    /* text-transform: uppercase; */
+    font-size: 4rem;
 }
 
 .banner-intro-text:nth-child(1) {
